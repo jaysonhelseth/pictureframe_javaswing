@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class DisplayForm {
@@ -33,7 +34,10 @@ public class DisplayForm {
                     .map(Path::toFile)
                     .collect(Collectors.toList());
 
-            return files.get(0).toString();
+            Random rand = new Random();
+            int pos = rand.nextInt(files.size());
+
+            return files.get(pos).toString();
         } catch (IOException e) {
             e.printStackTrace();
         }
