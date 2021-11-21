@@ -17,13 +17,14 @@ public class DisplayForm {
     private JPanel displayPanel;
     private JButton quitButton;
     private JLabel image;
+    private int delay = 300000; // 5 minutes
 
     public DisplayForm() {
         image.setIcon(new StretchIcon(getFile(), true));
         quitButton.addActionListener(e -> System.exit(0));
         ActionListener timerAction = e -> image.setIcon(new StretchIcon(getFile(), true));
 
-        Timer timer = new Timer(2000, timerAction);
+        Timer timer = new Timer(delay, timerAction);
         timer.setRepeats(true);
         timer.start();
     }
