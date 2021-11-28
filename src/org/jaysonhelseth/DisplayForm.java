@@ -17,7 +17,7 @@ public class DisplayForm {
     private JPanel displayPanel;
     private JButton quitButton;
     private JLabel image;
-    private int delay = 300000; // 5 minutes
+    private int delay = 10000; // 10 seconds
 
     public DisplayForm() {
         image.setIcon(new StretchIcon(getFile(), true));
